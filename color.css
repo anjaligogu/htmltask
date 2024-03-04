@@ -1,0 +1,18 @@
+#A, #B, #C{
+    border:none;
+    background-color: white;
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: Copperplate;
+}
+#A:hover, #B:hover, #C:hover{
+    color: rgb(12,19,220);
+}
+
+#change{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Brush Script MT;
+}

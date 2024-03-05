@@ -1,0 +1,73 @@
+marquee{
+    background-color: rgb(104, 172, 232);
+    color: white;
+    font-size: 50px;
+    font-family: cursive;
+    margin-bottom: 20px;
+}
+@media only screen and (min-width: 800px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+p{
+    font-family: 'Brush Script MT', cursive;
+}
+table,
+th,
+td {
+    border: 1px solid rgb(99, 201, 223);
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+#A,
+#B{
+    background-color: rgb(20, 19, 6);
+    color: white;
+}
+#C{
+    padding: 10px;
+    background-color: rgb(92, 244, 92);
+    border-radius: 15px;
+    border:none
+}
+
+.z{
+    display:flex;
+    gap: 20px;
+    background-color: rgb(91, 225, 102);
+}
+.x{
+    margin:20px;
+    height: 150px;
+    width: 150px;
+    background-color: rgb(23, 235, 165);
+    transition-duration: 2s;
+    transition-property: all 2s steps(3);
+
+}
+.x:hover{
+    background-color: rgb(145, 104, 223);
+    font-size: 40px;
+    font-family: fantasy;
+}
+.x:active{
+    background-color: rgb(141, 9, 31);
+}
+a:link{
+    text-decoration: none;
+}
+
+li:nth-child(even){
+    color: rgb(235, 12, 75);
+    font-family:Lucida Handwriting;
+}
+#inputs{
+    margin-top: 20px;
+}
+#info{
+    
+    background-color: rgb(50, 229, 184);
+    color:rgb(116, 25, 236);
+}

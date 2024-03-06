@@ -1,0 +1,208 @@
+<html>
+
+<head>
+    <title>inlineblock</title>
+</head>
+<style>
+    #A,
+    #B,
+    #C {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        background-color: rgb(43, 196, 53);
+        border: none;
+        color: white;
+        font-size: 20px;
+        margin-right: 40px;
+        font-family: fantasy;
+        padding: 15px;
+        border-radius: 25px;
+       
+    }
+    #setTime{
+        display: none;
+    }
+    #A:hover,
+    #B:hover,
+    #C:hover {
+        background-color: rgb(235, 123, 25);
+    }
+
+    #homechanges,
+    #sectionChanges,
+    #linkChanges,
+    #interval {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        background-color: white;
+        border: none;
+        height: auto;
+        width: auto;
+        font-size: 40px;
+        margin-right: 60px;
+        font-family: Brush Script MT;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    #homeChanges:hover,
+    #sectionChanges:hover,
+    #linkChanges:hover,
+    #interval:hover {
+        color: rgb(112, 227, 112);
+
+    }
+
+    #hide {
+        display: none;
+    }
+
+    #sectionInfo {
+        background-color: rgb(175, 187, 208);
+        color: rgb(163, 12, 158);
+        display: flex;
+        flex-direction: row;
+        display: none;
+        font-family: Trattatello, fantasycursive;
+    }
+
+    #sectionInfo p {
+        margin-right: 20px;
+    }
+
+    #links {
+        height: 100px;
+        width: 100px;
+        display: none;
+    }
+</style>
+
+<body>
+    
+    <button id="homeChanges" onmouseover="visible()">HOME</button>
+    <button id="sectionChanges" onmouseover="mySection()">SECTION</button>
+    <button id="linkChanges" onmouseover="MYLink()">LINK</button>
+    <button id="interval" onmouseover="timerVisible()">TIMER</button>
+
+    <section id="setTime">
+        <button id="A" onmouseover="startCounter()">start</button>
+        <button id="B" onmouseover="stopCounter()">stop</button>
+        <button id="C" onmouseover="resumeCounter()">resume</button>
+
+        <p id="counterDisplay">0</p>
+    </section>
+
+
+    <section id="hide">
+        <form>
+            <label>fisrtname</label><br>
+            <input type="text" id="name" name="fname"><br>
+            <label>email</label><br>
+            <input type="text" id="email" name="email"><br>
+            <label>Age</label><br>
+            <input type="number" id="age" name="age"><br>
+            <label>phone number</lable><br>
+                <input type="number" id="phno" name="phno">
+                <button onclick="myHome()">Submit</button>
+        </form>
+        <p id="update"></p>
+    </section>
+
+    <section id="sectionInfo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quasi libero nulla modi saepe velit
+            delectus quod quia, nisi hic doloribus dicta expedita iure similique tenetur nesciunt dolores, iste ab.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nobis distinctio amet voluptatibus, dolore
+            quod error tenetur. Earum aut quos distinctio placeat. Cum, quis. Nemo, nesciunt rem. Et, ullam molestias!
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cum quas nesciunt facilis ex. Deserunt
+            architecto, nisi nobis itaque labore esse sed nam hic commodi accusamus sit ratione soluta sunt.</p>
+    </section>
+
+
+    <section id="links">
+        <a href="https://www.youtube.com" target="_blank"><img
+                src="data:image/png;base64,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"></a>
+    </section>
+
+
+    <script>
+
+        function myHome() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let age = document.getElementById('age').value;
+            let phno = document.getElementById('phno').value;
+
+            document.getElementById('update').innerHTML = '<pre>' + 'name:' + name + "\n" + 'mail:' + email + "\n" + 'age:' + age + "\n" + 'no:' + phno + '</pre>';
+
+        }
+
+
+        var counter = 0;
+
+
+        function startCounter() {
+            var interval = setInterval(myFunc, 2000);
+        }
+
+        function myFunc() {
+            counter++;
+            document.getElementById('counterDisplay').innerText = counter;
+        }
+
+        function stopCounter() {
+            clearInterval(interval);
+        }
+
+        function resumeCounter() {
+            startCounter();
+        }
+
+
+
+        function visible() {
+            document.getElementById("hide").style.display = 'block';
+            document.getElementById("sectionInfo").style.display = 'none';
+            document.getElementById("links").style.display = 'none';
+            document.getElementById("setTime").style.display = 'none';
+
+
+        }
+
+        function mySection() {
+            document.getElementById("hide").style.display = 'none';
+            document.getElementById("sectionInfo").style.display = 'flex';
+            document.getElementById("links").style.display = 'none';
+            document.getElementById("setTime").style.display = 'none';
+
+        }
+
+
+
+
+        function MYLink() {
+            document.getElementById("links").style.display = 'block';
+            document.getElementById("hide").style.display = 'none';
+            document.getElementById("sectionInfo").style.display = 'none';
+            document.getElementById("setTime").style.display = 'none';
+
+
+        }
+
+        function timerVisible() {
+            document.getElementById("setTime").style.display = 'block';
+            document.getElementById("hide").style.display = 'none';
+
+            document.getElementById("sectionInfo").style.display = 'none';
+            document.getElementById("links").style.display = 'none';
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

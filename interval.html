@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>setTime</title>
+    <style>
+        #A, #B, #C{
+            margin-top: 30px;
+            margin-bottom: 20px;
+            background-color: rgb(43, 196, 53);
+            border: none;
+            color:white;
+            font-size: 20px;
+            margin-right: 40px;
+            font-family: fantasy;
+            padding: 15px;
+            border-radius: 25px;
+        }
+
+        #A:hover, #B:hover, #C:hover{
+            background-color: rgb(235, 123, 25);
+        }
+    </style>
+</head>
+<body>
+    <button id="A" onmouseover="startCounter()">start</button>
+    <button id="B" onmouseover="stopCounter()">stop</button>
+    <button id="C" onmouseover="resumeCounter()">resume</button>
+
+    <p id="counterDisplay">0</p>
+
+    <script>
+        var counter = 0;
+     
+
+        function startCounter() {
+           var interval = setInterval(myFunc, 2000);
+        }
+
+        function myFunc() {
+            counter++;
+            document.getElementById('counterDisplay').innerText =  counter;
+        }
+
+        function stopCounter() {
+            clearInterval(interval);
+        }
+
+        function resumeCounter() {
+            startCounter(); 
+        }
+    </script>
+</body>
+</html>
